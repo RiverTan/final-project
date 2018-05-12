@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>User profile form requirement</title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <!-- <style>
+     body {
+        padding-top: 70px;
+    }
+    .jumbotron {
+      margin: 0px 220px;
+    }
+    h2{
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .othertop{margin-top:10px;}
+    </style> -->
+
+
+</head>
+
+<body>
+<!--River's Code-->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <!-- Invisible button -->
+        <ul class="navbar-nav d-block d-lg-none mr-auto ml-2">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-mobile-alt fa-lg text-dark ml-3"></i></a>
+            </li>
+        </ul>
+        <a class="navbar-brand logo-font" href="index.html">
+            Pills Reminder
+        </a>
+        <!-- links toggle -->
+        <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#links" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+
+        <!-- Emergency button -->
+        <ul class="navbar-nav d-block d-lg-none ml-auto mr-2">
+            <li class="nav-item">
+                <a class="nav-link" href="tel:+4152754361"><i class="fas fa-mobile-alt fa-lg text-warning"></i></a>
+            </li>
+        </ul>
+
+        <!-- account toggle -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#account" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-user"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="links">
+            <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="http://neueelement.com/pillstest/">Pills Game</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Doctor</a>
+                </li> -->
+                <!-- <li class="nav-item dropdown mr-3">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                      Doctor
+                    </a>
+                    <div class="dropdown-menu">
+                      <a href="consult.html" class="dropdown-item">
+                        Consult
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        Appointment
+                      </a>
+                    </div>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="account">
+            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav d-none d-lg-block ml-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="tel:+4152754361">Emergency</a>
+                    </li>
+                </ul>
+                <!-- <li class="nav-item nav-item-right"><a href="#" class="nav-link">Log in</a></li>
+                <li class="nav-item nav-item-right"><a href="login.html" class="nav-link">Log out</a></li> -->
+                <li class="nav-item nav-item-right">
+                <a class="nav-link" onclick="#" data-toggle="modal" data-target="#loginModal">Sign In</a>
+                </li>
+                <li class="nav-item nav-item-right">
+                <a id="signout" class="nav-link" onclick="handleSignOut();">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <div class="container">
+<div class="row">
+<div class="col-md-10 ">
+<form class="form-horizontal">
+<fieldset>
+</div>
+</div>
+</div>
+</fieldset>
+  <div class="jumbotron">
+<!-- Form Name -->
+<h2 class="mt-3">User profile form requirement</h2>
+
+<!-- Text input-->
+  <div class="form-group">
+      Name
+      <input type="text" placeholder="Name" class="col-md-4 mx-auto mb-3" id="nameField">
+  </div>
+<!-- File Button -->
+<div class="form-group">
+  Upload Photo
+    <input id="Upload photo" name="Upload photo" class="input-file" type="file" >
+</div>
+
+<!-- Email input-->
+  <div class="form-group">
+    Email
+      <input id="emailField" name="Date Of Birth" type="text" placeholder="Email" class="col-md-4">
+      </div>
+
+
+<!-- Text input-->
+  <div class="form-group">
+    Date Of Birth
+       <div class="input-group-addon">
+     <i class="fa fa-birthday-cake"></i>
+      </div>
+      <input id="DOB" name="Date Of Birth" type="text" placeholder="Date Of Birth" class="col-md-4">
+      </div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+
+      Gender
+      <input type="radio" name="Gender" id="Gender0" value="1" checked="checked">
+      Male
+      <input type="radio" name="Gender" id="Gender-1" value="2">
+      Female
+      <input type="radio" name="Gender" id="Gender-2" value="3" >
+      Other
+</div>
+
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+
+      Marital Status:
+      <input type="radio" name="marS" id="marS1" value="1" checked="checked">
+      Married
+      <input type="radio" name="marS" id="marS2" value="2">
+      Unmarried
+
+</div>
+
+<!-- Address -->
+ <div class="form-group">
+    Permanent Address
+      <input id="addField" name="Permanent Address" type="text" placeholder="Address" class="col-md-4">
+      <input id="addField" name="Permanent Address" type="text" placeholder="Area" class="col-md-2 col-xs-6">
+      <input id="addField" name="Permanent Address" type="text" placeholder="Street" class="col-md-2  col-xs-4">
+  </div>
+
+
+<!-- Text input-->
+<div class="form-group">
+ Phone Number
+  <div class="input-group">
+    <input id="number" name="Phone number " type="text" placeholder="Phone number " class="col-md-4">
+      </div>
+      <div class="input-group othertop">
+       <div class="input-group-addon">
+     <i class="fa fa-mobile fa-1x" style="font-size: 20px;"></i>
+       </div>
+  </div>
+
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  Allergetic to
+      <input type="checkbox" name="Allergies" id="Allergies" value="1">
+      Shellfish
+      <input type="checkbox" name="Allergies" id="Allergies" value="2">
+      Milk
+      <input type="checkbox" name="Allergies" id="Allergies" value="3">
+      Eggs
+      <input type="checkbox" name="Allergies" id="Allergies" value="4">
+      Soy
+      <input type="checkbox" name="Allergies" id="Allergies" value="5">
+      Tree nuts(Walnuts, almond, pine nuts, brazil nuts & pecans)
+      <input type="checkbox" name="
+      Allergies" id="Allergies" value="6">
+      Fish
+      <input type="checkbox" name="Allergies" id="Allergies" value="7">
+      Wheat & other grains with gluten
+      <input type="checkbox" name="Allergies" id="Allergies" value="8">
+      Others
+      </div>
+     <input type="input" name="Other Allergies" id="others"  placeholder="Other Allergies">
+
+
+  </div>
+
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Overview (max 200 words)">General Information</label>
+  <div class="col-md-4">
+    <textarea class="form-control" rows="10"  id="Overview (max 200 words)" name="Overview (max 200 words)">Overview</textarea>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <div class="col-md-4">
+    <button class="btn btn-success btn-lg"  onclick="storeData()">Submit</button>
+    <button class="btn btn-danger btn-lg" onclick="clearData()">Clear</button>
+    <button class="btn btn-warning btn-lg" onclick="updateData()">Update</button>
+  </div>
+</div>
+</div>
+</fieldset>
+</form>
+</div>
+<!-- <div class="col-md-2 hidden-xs">
+<img src="http://websamplenow.com/30/userprofile/images/avatar.jpg" class="img-responsive img-thumbnail ">
+  </div> -->
+
+
+</div>
+   </div>
+
+
+
+</form>
+</div>
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+
+
+     <!-- Firebase -->
+
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC0qBxQmrJ8D9_AQtIqgWfVz_rYUqi9OsM",
+    authDomain: "pills-reminder-b318a.firebaseapp.com",
+    databaseURL: "https://pills-reminder-b318a.firebaseio.com",
+    projectId: "pills-reminder-b318a",
+    storageBucket: "pills-reminder-b318a.appspot.com",
+    messagingSenderId: "390336821476"
+  };
+  firebase.initializeApp(config);
+</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118358077-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-118358077-1');
+    </script>
+
+
+    <script src="js/basic.js"></script>
+
+</body>
+
+</html>

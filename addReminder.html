@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pills Reminder</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <!-- Calendar -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <!-- My css -->
+    <link rel="stylesheet" href="css/homepage.css" >
+    <link rel="stylesheet" href="css/addReminder.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- Invisible button -->
+            <ul class="navbar-nav d-block d-lg-none mr-auto ml-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-mobile-alt fa-lg text-dark ml-3"></i></a>
+                </li>
+            </ul>
+            <a class="navbar-brand logo-font" href="index.html">
+                Pills Reminder
+            </a>
+            <!-- links toggle -->
+            <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#links" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+            <!-- Emergency button -->
+            <ul class="navbar-nav d-block d-lg-none ml-auto mr-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="tel:+4152754361"><i class="fas fa-mobile-alt fa-lg text-warning"></i></a>
+                </li>
+            </ul>
+
+            <!-- account toggle -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#account" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-user"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="links">
+                <ul class="navbar-nav mr-auto">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="http://neueelement.com/pillstest/">Pills Game</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Doctor</a>
+                    </li> -->
+                    <!-- <li class="nav-item dropdown mr-3">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                          Doctor
+                        </a>
+                        <div class="dropdown-menu">
+                          <a href="consult.html" class="dropdown-item">
+                            Consult
+                          </a>
+                          <a href="#" class="dropdown-item">
+                            Appointment
+                          </a>
+                        </div>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="account">
+                <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav d-none d-lg-block ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-warning" href="tel:+4152754361">Emergency</a>
+                        </li>
+                    </ul>
+                    <!-- <li class="nav-item nav-item-right"><a href="#" class="nav-link">Log in</a></li>
+                    <li class="nav-item nav-item-right"><a href="login.html" class="nav-link">Log out</a></li> -->
+                    <li class="nav-item nav-item-right">
+                    <a class="nav-link" onclick="#" data-toggle="modal" data-target="#loginModal">Sign In</a>
+                    </li>
+                    <li class="nav-item nav-item-right">
+                    <a id="signout" class="nav-link" onclick="handleSignOut();">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <!-- ====================Name==================== -->
+          <!-- <h5 class="float-left text-secondary mb-1">Name</h5> -->
+          <div class="input-group mx-auto my-3 ">
+            <input type="text" id="pillName" class="form-control" placeholder="Tablet's Name" aria-label="Tablet's Name" aria-describedby="basic-addon2">
+            <!-- <input type="textfield"  id="latestHotDogStatus"> -->
+
+          </div>
+          <!-- ====================Shape==================== -->
+          <div class="clearfix">
+          <h5 class="float-left text-secondary mb-1">Shape</h5>
+          </div>
+          <div class="btn-group btn-group-toggle mb-3 " data-toggle="buttons">
+
+
+
+            <!-- <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="Dad">
+            <label class="custom-control-label" for="customRadioInline1">Dad</label> -->
+
+
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillShape1">
+              <input type="radio" name="pillShape1" id="pillShape1" value="cylinder">
+              <img class="tablet" src="img/cylinder.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillShape2">
+              <input type="radio" name="pillShape1" id="pillShape2" value="circle">
+              <img class="tablet" src="img/circle.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillShape3">
+              <input type="radio" name="pillShape1" id="pillShape3" value="ellipse">
+              <img class="tablet" src="img/ellipse.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillShape4">
+              <input type="radio" name="pillShape1" id="pillShape4" value="rectangle">
+              <img class="tablet" src="img/rectangle.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillShape5">
+              <input type="radio" name="pillShape1" id="pillShape5" value="pentagon">
+              <img class="tablet" src="img/pentagon.png" alt="">
+            </label>
+          </div>
+          <!-- ====================Color==================== -->
+          <div class="clearfix">
+          <h5 class="float-left text-secondary mb-1">Color</h5>
+          </div>
+          <div class="btn-group btn-group-toggle mb-3 " data-toggle="buttons" >
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillColor1">
+              <input type="radio" name="pillColor1" id="pillColor1" value="blue">
+              <img class="color" src="img/blue.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillColor2">
+              <input type="radio" name="pillColor1" id="pillColor2" value="green">
+              <img class="color" src="img/green.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillColor3">
+              <input type="radio" name="pillColor1" id="pillColor3" value="cyan">
+              <img class="color" src="img/cyan.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillColor4">
+              <input type="radio" name="pillColor1" id="pillColor4" value="gray">
+              <img class="color" src="img/gray.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillColor5">
+              <input type="radio" name="pillColor1" id="pillColor5" value="white">
+              <img class="color" src="img/white.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillColor6">
+              <input type="radio" name="pillColor1" id="pillColor6" value="yellow">
+              <img class="color" src="img/yellow.png" alt="">
+            </label>
+
+            <label class="btn btn-outline-secondary btn-sm"  for="pillColor7">
+              <input type="radio" name="pillColor1" id="pillColor7" value="red">
+              <img class="color" src="img/red.png" alt="">
+            </label>
+          </div>
+          <!-- ====================Dose==================== -->
+          <!-- <div class="clearfix">
+          <h5 class="float-left text-secondary mb-1">Dose</h5>
+          </div> -->
+          <div class="input-group mb-3 mx-auto">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Dose</span>
+            </div>
+            <select class="custom-select" id="pillDose">
+              <option selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+
+          </div>
+          <!-- ====================Times==================== -->
+          <!-- <h5 class="float-left text-secondary mb-1">Times</h5> -->
+          <div class="input-group mb-3  mx-auto">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Times</span>
+            </div>
+            <select class="custom-select" id="pillTimes">
+              <option selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+
+          </div>
+          <!-- ====================Calendar==================== -->
+          <!-- <h5 class="float-left text-secondary mb-1">Calendar</h5> -->
+          <div class="input-group mb-3  mx-auto">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Calendar</span>
+            </div>
+
+            <input type="text" class="form-control" id="pillCalendar" name="datefilter" value="">
+
+
+          </div>
+          <!-- ====================Tags==================== -->
+          <h5 class="float-left text-secondary mb-1">Tag</h5>
+          <div class="mb-5 mx-auto">
+            <div class="input-group">
+
+              <div class="input-group-prepend">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="Dad">
+                  <label class="custom-control-label" for="customRadioInline1">Dad</label>
+                </div>
+              </div>
+
+              <div class="input-group-prepend">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="Mom">
+                  <label class="custom-control-label" for="customRadioInline2">Mom</label>
+                </div>
+              </div>
+
+              <div class="input-group-prepend">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" value="Kid">
+                  <label class="custom-control-label" for="customRadioInline3">Kid</label>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+        <div class="row ">
+          <div class="mx-auto">
+            <button class="btn btn-success px-3" onclick="storeAll()" >Confirm</button>
+            <a class="btn btn-success px-3 ml-5"  href="index.html" role="button">Start!</a>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC0qBxQmrJ8D9_AQtIqgWfVz_rYUqi9OsM",
+        authDomain: "pills-reminder-b318a.firebaseapp.com",
+        databaseURL: "https://pills-reminder-b318a.firebaseio.com",
+        projectId: "pills-reminder-b318a",
+        storageBucket: "pills-reminder-b318a.appspot.com",
+        messagingSenderId: "390336821476"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
+    <!-- datafilter -->
+    <script type="text/javascript">
+      $(function() {
+
+      $('input[name="datefilter"]').daterangepicker({
+          autoUpdateInput: false,
+          locale: {
+              cancelLabel: 'Clear'
+          }
+      });
+
+      $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+          $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+      });
+
+      $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+          $(this).val('');
+      });
+
+    });
+    </script>
+    <script src="js/addReminder.js"></script>
+  </body>
+
+</html>

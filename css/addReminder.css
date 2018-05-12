@@ -1,0 +1,16 @@
+.container{
+
+}
+.tablet{
+  width: 80%;
+  height: auto;
+}
+
+.color{
+    width: 100%;
+    height: auto;
+}
+
+h5{
+  font-size: 90%;
+}
